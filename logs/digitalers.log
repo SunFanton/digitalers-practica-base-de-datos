@@ -1,0 +1,21 @@
+2022-09-12 14:52:58.743 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
+2022-09-12 14:53:25.436 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 26 recuperado
+2022-09-12 14:53:41.716 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:81) - Cliente con id 27 eliminado
+2022-09-12 15:01:07.202 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
+2022-09-12 15:01:55.357 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
+2022-09-12 15:02:06.351 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 18 recuperado
+2022-09-12 15:02:13.928 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:82) - Cliente con id 26 eliminado
+2022-09-12 15:04:05.233 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
+2022-09-12 15:04:14.585 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 25 recuperado
+2022-09-12 15:04:21.728 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:82) - Cliente con id 25 eliminado
+2022-09-12 15:04:53.738 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:118) - Cliente nuevo insertado
+2022-09-12 15:05:49.112 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:157) - Cliente con id 24 actualizado
+2022-09-12 15:12:08.877 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
+2022-09-12 15:12:20.284 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 28 recuperado
+2022-09-12 15:12:26.151 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:82) - Cliente con id 28 eliminado
+2022-09-12 15:12:57.410 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:119) - Cliente nuevo insertado
+2022-09-12 15:21:01.849 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
+2022-09-12 15:21:15.011 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 24 recuperado
+2022-09-12 15:21:24.617 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:81) - Cliente con id 29 eliminado
+2022-09-12 15:22:11.231 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:117) - Cliente nuevo insertado
+2022-09-12 15:24:19.198 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:156) - Cliente con id 23 actualizado
