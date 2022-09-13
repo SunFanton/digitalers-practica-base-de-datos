@@ -13,25 +13,25 @@ create table if not exists sucursales(
 	key(ciudad)
 )engine=InnoDB;
 
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-FLORES","Flores");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-CABALLITO","Caballito");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-DEVOTO","Villa Devoto");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-RECOLETA","Recoleta");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-BELGRANO","Belgrano");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-LA PLATA","La Plata");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-SAN ISIDRO","San Isidro");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-SAN JUSTO","San Justo");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-TIGRE","Tigre");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-MAR DEL PLATA","Mar del Plata");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-BAHIA BLANCA","Bahia Blanca");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-LUJAN","Lujan");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-GUALEGUAYCHU","Gualeguaychu");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-CIUDAD CORDOBA","Ciudad de Cordoba");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-ROSARIO","Rosario");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-MENDOZA","Ciudad de Mendoza");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-POSADAS","Posadas");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-LA QUIACA","La Quiaca");
-insert into sucursales(nombre_sucursal,ciudad) values("SUC-USHUAIA","Ushuaia");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC1-FLORES","Flores");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC2-CABALLITO","Caballito");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC3-DEVOTO","Villa Devoto");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC4-RECOLETA","Recoleta");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC5-BELGRANO","Belgrano");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC6-LA PLATA","La Plata");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC7-SAN ISIDRO","San Isidro");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC8-SAN JUSTO","San Justo");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC9-TIGRE","Tigre");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC10-MAR DEL PLATA","Mar del Plata");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC11-BAHIA BLANCA","Bahia Blanca");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC12-LUJAN","Lujan");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC13-GUALEGUAYCHU","Gualeguaychu");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC14-CIUDAD CORDOBA","Ciudad de Cordoba");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC15-ROSARIO","Rosario");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC16-MENDOZA","Ciudad de Mendoza");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC17-POSADAS","Posadas");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC18-LA QUIACA","La Quiaca");
+insert into sucursales(nombre_sucursal,ciudad) values("SUC19-USHUAIA","Ushuaia");
 
 drop table if exists empleados;
 
@@ -103,8 +103,8 @@ create table if not exists clientes(
 	prestamo boolean default false,
 	id_empleado int(20) default null,
 	primary key (id_cliente),
-	constraint fk_ciudad foreign key(ciudad) references sucursales(ciudad),
-	constraint fk_empleado foreign key (id_empleado) references empleados(id_empleado) on delete set null on update no action
+	constraint fk_ciudad foreign key(ciudad) references sucursales(ciudad) on delete no action on update no action,
+	constraint fk_empleado foreign key (id_empleado) references empleados(id_empleado) on delete no action on update no action
 )engine=InnoDB;
 
 insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Dario Romero","Avenida Rivadavia 7200","Flores",0,12);
@@ -153,7 +153,7 @@ create table if not exists cuentas(
 	nro_cuenta int(30) auto_increment,
 	tipo_cuenta varchar(100) not null,
 	primary key(nro_cuenta),
-	constraint fk_tipo_cuenta foreign key(tipo_cuenta) references tipos_cuentas(descripcion)
+	constraint fk_tipo_cuenta foreign key(tipo_cuenta) references tipos_cuentas(descripcion) on delete no action on update no action
 )engine=InnoDB;
 
 alter table cuentas auto_increment=1000;

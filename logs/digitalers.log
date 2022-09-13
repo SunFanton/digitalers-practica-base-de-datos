@@ -1,21 +1,38 @@
-2022-09-12 14:52:58.743 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
-2022-09-12 14:53:25.436 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 26 recuperado
-2022-09-12 14:53:41.716 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:81) - Cliente con id 27 eliminado
-2022-09-12 15:01:07.202 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
-2022-09-12 15:01:55.357 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
-2022-09-12 15:02:06.351 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 18 recuperado
-2022-09-12 15:02:13.928 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:82) - Cliente con id 26 eliminado
-2022-09-12 15:04:05.233 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
-2022-09-12 15:04:14.585 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 25 recuperado
-2022-09-12 15:04:21.728 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:82) - Cliente con id 25 eliminado
-2022-09-12 15:04:53.738 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:118) - Cliente nuevo insertado
-2022-09-12 15:05:49.112 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:157) - Cliente con id 24 actualizado
-2022-09-12 15:12:08.877 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
-2022-09-12 15:12:20.284 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 28 recuperado
-2022-09-12 15:12:26.151 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:82) - Cliente con id 28 eliminado
-2022-09-12 15:12:57.410 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:119) - Cliente nuevo insertado
-2022-09-12 15:21:01.849 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:39) - Recuperando datos
-2022-09-12 15:21:15.011 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:62) - Cliente con id 24 recuperado
-2022-09-12 15:21:24.617 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:81) - Cliente con id 29 eliminado
-2022-09-12 15:22:11.231 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:117) - Cliente nuevo insertado
-2022-09-12 15:24:19.198 INFO   -com.digitalers.PracticaBD.principal.AppCliente.main(AppCliente.java:156) - Cliente con id 23 actualizado
+2022-09-12 21:48:10.240 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:38) - Recuperando datos
+2022-09-12 21:48:33.303 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:60) - Cliente con id 1 recuperado
+2022-09-12 21:48:37.254 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:79) - Cliente con id 26 eliminado
+2022-09-12 21:49:18.357 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:117) - Cliente nuevo insertado
+2022-09-12 21:50:03.956 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:158) - Cliente con id 27 actualizado
+2022-09-12 21:55:42.519 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:38) - Recuperando datos
+2022-09-12 21:55:47.207 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:60) - Cliente con id 27 recuperado
+2022-09-12 21:55:55.774 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:79) - Cliente con id 24 eliminado
+2022-09-12 21:56:26.332 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:117) - Cliente nuevo insertado
+2022-09-12 21:57:02.140 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:158) - Cliente con id 28 actualizado
+2022-09-12 22:01:09.060 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:38) - Recuperando datos
+2022-09-12 22:01:19.406 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:60) - Sucursal SUC3-DEVOTO recuperada
+2022-09-12 22:02:27.698 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:38) - Recuperando datos
+2022-09-12 22:02:34.078 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:60) - Sucursal SUC3-DEVOTO recuperada
+2022-09-12 22:02:58.646 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:79) - Sucursal SUC7-SAN ISIDRO eliminada
+2022-09-12 22:03:15.748 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:108) - Sucursal SUC7-SAN ISIDRO insertada
+2022-09-12 22:03:37.428 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:137) - Sucursal  actualizada
+2022-09-12 22:11:40.880 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:38) - Recuperando datos
+2022-09-12 22:11:50.885 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:60) - Sucursal SUC3-DEVOTO recuperada
+2022-09-12 22:15:17.286 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:38) - Recuperando datos
+2022-09-12 22:15:28.647 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:60) - Sucursal SUC12-LUJAN recuperada
+2022-09-12 22:16:18.581 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:107) - Sucursal SUC11-BAHIA BLANCA insertada
+2022-09-12 22:16:33.645 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:135) - Sucursal SUC14-AZUL actualizada
+2022-09-12 22:25:04.562 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:38) - Recuperando datos
+2022-09-12 22:25:15.981 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:60) - Cliente con id 12 recuperado
+2022-09-12 22:25:23.429 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:79) - Cliente con id 28 eliminado
+2022-09-12 22:26:12.084 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:117) - Cliente nuevo insertado
+2022-09-12 22:26:51.645 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:158) - Cliente con id 29 actualizado
+2022-09-12 22:27:56.865 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:38) - Recuperando datos
+2022-09-12 22:28:04.117 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:60) - Sucursal SUC15-ROSARIO recuperada
+2022-09-12 22:28:19.230 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:79) - Sucursal SUC13-GUALEGUAYCHU eliminada
+2022-09-12 22:28:37.492 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:107) - Sucursal SUC13-GUALEGUAYCHU insertada
+2022-09-12 22:28:51.363 INFO   -com.digitalers.PracticaBD.principal.GestionSucursales.gestionaSucursales(GestionSucursales.java:135) - Sucursal SUC13-GUALEGUAYCHU actualizada
+2022-09-12 22:28:59.825 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:38) - Recuperando datos
+2022-09-12 22:29:04.931 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:60) - Cliente con id 27 recuperado
+2022-09-12 22:29:12.172 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:79) - Cliente con id 23 eliminado
+2022-09-12 22:29:48.772 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:117) - Cliente nuevo insertado
+2022-09-12 22:30:26.868 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:158) - Cliente con id 29 actualizado
