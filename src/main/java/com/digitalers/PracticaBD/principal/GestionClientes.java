@@ -19,10 +19,12 @@ public class GestionClientes {
 
 		ClienteDAOImpl clienteDAOImpl = null;
 		Logger miLogger = LogManager.getLogger();
+		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);
 		
 		try {
-			clienteDAOImpl = new ClienteDAOImpl(MariaDB.getMariaDB().getConexion());
+			if(clienteDAOImpl == null)
+				clienteDAOImpl = new ClienteDAOImpl(MariaDB.getMariaDB().getConexion());
 			
 		} catch (JDBCExcepcion e) {
 			e.printStackTrace();
@@ -96,8 +98,6 @@ public class GestionClientes {
 		String calle = in.nextLine();
 		System.out.println("Ingrese ciudad: ");
 		String ciudad = in.nextLine();
-		System.out.println("Ingrese true o false para prestamo: ");
-		boolean prestamo = in.nextBoolean();
 		System.out.println("Ingrese id empleado asociado: ");
 		int idEmpleado = in.nextInt();
 		
@@ -105,7 +105,6 @@ public class GestionClientes {
 								 	  .nombre(nombre)
 								 	  .calle(calle)
 								 	  .ciudad(ciudad)
-								 	  .prestamo(prestamo)
 								 	  .idEmpleado(idEmpleado)
 								 	  .build();
 		
@@ -136,8 +135,6 @@ public class GestionClientes {
 		String calleAct = in.nextLine();
 		System.out.println("Ingrese ciudad: ");
 		String ciudadAct = in.nextLine();
-		System.out.println("Ingrese true o false para prestamo: ");
-		boolean prestamoAct = in.nextBoolean();
 		System.out.println("Ingrese id empleado asociado: ");
 		int idEmpleadoAct = in.nextInt();
 		
@@ -146,7 +143,6 @@ public class GestionClientes {
 								 			.nombre(nombreAct)
 								 			.calle(calleAct)
 								 			.ciudad(ciudadAct)
-								 			.prestamo(prestamoAct)
 								 			.idEmpleado(idEmpleadoAct)
 								 			.build();
 		

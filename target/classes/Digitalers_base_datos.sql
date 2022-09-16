@@ -4,13 +4,42 @@ create database if not exists digitalers_practica_base_datos;
 
 use digitalers_practica_base_datos;
 
+drop table if exists ciudades;
+
+create table if not exists ciudades(
+	id_ciudad int(30) auto_increment,
+	ciudad varchar(100) not null,
+	provincia varchar(100),
+	primary key(id_ciudad)
+)engine=InnoDB;
+
+insert into ciudades(ciudad,provincia) values("Flores","CABA");
+insert into ciudades(ciudad,provincia) values("Caballito","CABA");
+insert into ciudades(ciudad,provincia) values("Villa Devoto","CABA");
+insert into ciudades(ciudad,provincia) values("Recoleta","CABA");
+insert into ciudades(ciudad,provincia) values("Belgrano","CABA");
+insert into ciudades(ciudad,provincia) values("La Plata","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("San Isidro","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("San Justo","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("Tigre","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("Mar del Plata","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("Bahia Blanca","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("Lujan","Buenos Aires");
+insert into ciudades(ciudad,provincia) values("Gualeguaychu","Entre Rios");
+insert into ciudades(ciudad,provincia) values("Ciudad de Cordoba","Cordoba");
+insert into ciudades(ciudad,provincia) values("Rosario","Santa Fe");
+insert into ciudades(ciudad,provincia) values("Ciudad de Mendoza","Mendoza");
+insert into ciudades(ciudad,provincia) values("Posadas","Misiones");
+insert into ciudades(ciudad,provincia) values("La Quiaca","Jujuy");
+insert into ciudades(ciudad,provincia) values("Ushuaia","Tierra del Fuego");
+
 drop table if exists sucursales;
 
 create table if not exists sucursales(
 	nombre_sucursal varchar(100) not null,
 	ciudad varchar(100) not null,
 	primary key(nombre_sucursal),
-	key(ciudad)
+	constraint fk_ciudad foreign key (ciudad) references ciudades(ciudad) on delete no action on update no action
 )engine=InnoDB;
 
 insert into sucursales(nombre_sucursal,ciudad) values("SUC1-FLORES","Flores");
@@ -100,39 +129,38 @@ create table if not exists clientes(
 	nombre varchar(100) not null,
 	calle varchar(100) default null,
 	ciudad varchar(100) not null,
-	prestamo boolean default false,
 	id_empleado int(20) default null,
 	primary key (id_cliente),
 	constraint fk_ciudad foreign key(ciudad) references sucursales(ciudad) on delete no action on update no action,
 	constraint fk_empleado foreign key (id_empleado) references empleados(id_empleado) on delete no action on update no action
 )engine=InnoDB;
 
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Dario Romero","Avenida Rivadavia 7200","Flores",0,12);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Estela Fernandez","Avenida Carabobo 100","Flores",0,13);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Emiliano Lucci","Yerbal 123","Flores",0,12);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Juana Molina","Avenida Santa Fe 1560","Recoleta",0,18);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Belen Garcia","Avenida Cordoba 1589","Recoleta",1,18);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Ana Maria Treffi","Avenida Cabildo 980","Belgrano",1,9);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Marcos Andres Tracio","Avenida Juan Domingo Peron 560","San Justo",1,10);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Nancy Rivera","Avenida Juan Domingo Peron 560","San Justo",0,10);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Esther Stein","Ignacio Arieta 345","San Justo",0,10);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Joaquin Gabriel Nuñez","Balcarce 95","Mar del Plata",0,20);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Juan Pablo Yturre","Libertad 456","Mar del Plata",1,20);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Elsa Ines Gutierrez","25 de Mayo 1789","Mar del Plata",0,20);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Ramon Teodoro Falcon","Avenida San Martin 928","Bahia Blanca",1,19);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Felisindo Samuel Goyte","El Alamo 2345","Bahia Blanca",0,19);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Rosario Paz Suarez","Terrazas 765","Lujan",1,14);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Merida Marcia Tonnell","Calle 28","Lujan",0,14);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Sabrina Estebanez","Calle Villareal 1678","Lujan",0,14);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Stephanie Moretz","Avenida de los santos 525","Posadas",0,16);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Alberto Jose Sendon","Esperanza 1980","Posadas",0,16);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Juan Mauricio Belloso","Belgrano 56","Posadas",1,16);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Susana Fernanda Cardoso","Moreno 155","Ciudad de Cordoba",0,7);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Micalea Camila Pedraza","Avenida 9 de septiembre 1567","Ciudad de Cordoba",0,7);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Tadeo Garcia","Avenida Libertador 1890","Ciudad de Cordoba",0,7);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Alma Isidor","Viento de las Nieves 345","Ushuaia",0,25);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Mariela Portre","Cañaveral 7658","Ciudad de Mendoza",1,5);
-insert into clientes(nombre,calle,ciudad,prestamo,id_empleado) values("Elvira Rosa Padilla","Avenida Juarez 456","Ciudad de Mendoza",1,5);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Dario Romero","Avenida Rivadavia 7200","Flores",12);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Estela Fernandez","Avenida Carabobo 100","Flores",13);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Emiliano Lucci","Yerbal 123","Flores",12);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Juana Molina","Avenida Santa Fe 1560","Recoleta",18);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Belen Garcia","Avenida Cordoba 1589","Recoleta",18);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Ana Maria Treffi","Avenida Cabildo 980","Belgrano",9);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Marcos Andres Tracio","Avenida Juan Domingo Peron 560","San Justo",10);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Nancy Rivera","Avenida Juan Domingo Peron 560","San Justo",10);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Esther Stein","Ignacio Arieta 345","San Justo",10);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Joaquin Gabriel Nuñez","Balcarce 95","Mar del Plata",20);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Juan Pablo Yturre","Libertad 456","Mar del Plata",20);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Elsa Ines Gutierrez","25 de Mayo 1789","Mar del Plata",20);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Ramon Teodoro Falcon","Avenida San Martin 928","Bahia Blanca",19);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Felisindo Samuel Goyte","El Alamo 2345","Bahia Blanca",19);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Rosario Paz Suarez","Terrazas 765","Lujan",14);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Merida Marcia Tonnell","Calle 28","Lujan",14);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Sabrina Estebanez","Calle Villareal 1678","Lujan",14);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Stephanie Moretz","Avenida de los santos 525","Posadas",16);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Alberto Jose Sendon","Esperanza 1980","Posadas",16);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Juan Mauricio Belloso","Belgrano 56","Posadas",16);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Susana Fernanda Cardoso","Moreno 155","Ciudad de Cordoba",7);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Micalea Camila Pedraza","Avenida 9 de septiembre 1567","Ciudad de Cordoba",7);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Tadeo Garcia","Avenida Libertador 1890","Ciudad de Cordoba",7);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Alma Isidor","Viento de las Nieves 345","Ushuaia",25);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Mariela Portre","Cañaveral 7658","Ciudad de Mendoza",5);
+insert into clientes(nombre,calle,ciudad,id_empleado) values("Elvira Rosa Padilla","Avenida Juarez 456","Ciudad de Mendoza",5);
 
 drop table if exists tipos_cuentas;
 
@@ -245,3 +273,117 @@ insert into cuentas_clientes(nro_cuenta,id_cliente) values(1019,15);
 insert into cuentas_clientes(nro_cuenta,id_cliente) values(1019,10);
 insert into cuentas_clientes(nro_cuenta,id_cliente) values(1021,11);
 insert into cuentas_clientes(nro_cuenta,id_cliente) values(1021,3);
+
+drop table if exists tipos_prestamos;
+
+create table if exists tipos_prestamos(
+	id int(11) auto_increment,
+	descripcion varchar(100) not null,
+	primary key(id),
+	key(descripcion)
+)engine=InnoDB;
+
+insert into tipos_prestamos(descripcion) values("Prestamo personal");
+insert into tipos_prestamos(descripcion) values("Prestamo al consumo");
+insert into tipos_prestamos(descripcion) values("Prestamo educativo");
+insert into tipos_prestamos(descripcion) values("Prestamo hipotecario");
+insert into tipos_prestamos(descripcion) values("Prestamo para empresas");
+
+create table if not exists prestamos(
+	nro_prestamo int(30) auto_increment,
+	tipo_prestamo varchar(100) not null,
+	primary key(nro_prestamo),
+	constraint fk_tipo_prestamo foreign key(tipo_prestamo) references tipos_prestamos(descripcion) on delete no action on update no action
+)engine=InnoDB;
+
+alter table prestamos auto_increment=1000;
+
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
+insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
+insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
+insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
+insert into prestamos(tipo_prestamo) values("Prestamo educativo");
+insert into prestamos(tipo_prestamo) values("Prestamo educativo");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo educativo");
+insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
+insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
+insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
+insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
+insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
+insert into prestamos(tipo_prestamo) values("Prestamo educativo");
+insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
+insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo) values("Prestamo educativo");
+insert into prestamos(tipo_prestamo) values("Prestamo educativo");
+insert into prestamos(tipo_prestamo) values("Prestamo personal");
+
+drop table if exists prestamos_clientes;
+
+create table if not exists prestamos_clientes(
+	nro_prestamo int(30),
+	id_cliente int(20),
+	key (nro_prestamo,id_cliente),
+	constraint fk_nro_prestamo foreign key(nro_prestamo) references prestamos(nro_prestamo) on delete cascade on update cascade,
+	constraint fk_id_cliente foreign key(id_cliente) references clientes(id_cliente) on delete cascade on update cascade
+)engine=InnoDB;
+
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1001,1);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1001,2);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1003,3);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1003,4);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1003,5);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1007,6);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1008,6);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1009,9);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1009,9);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1012,1);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1012,2);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1011,21);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1011,20);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1017,16);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1015,8);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1015,10);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1013,1);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1029,25);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1027,2);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1027,13);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1018,3);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1023,19);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1023,8);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1014,10);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1014,12);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1020,2);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1020,15);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1020,20);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1008,16);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1008,18);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1009,10);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1015,15);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1015,21);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1015,21);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1029,26);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1001,1);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1024,24);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1024,23);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1022,4);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1026,7);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1026,13);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1019,15);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1019,10);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1021,11);
+insert into prestamos_clientes(nro_prestamo,id_cliente) values(1021,3);
+
+
+

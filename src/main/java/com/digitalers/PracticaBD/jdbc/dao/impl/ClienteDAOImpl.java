@@ -38,7 +38,6 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> {
 										 .nombre(rs.getString("nombre"))
 										 .calle(rs.getString("calle"))
 										 .ciudad(rs.getString("ciudad"))
-										 .prestamo(rs.getBoolean("prestamo"))
 										 .idEmpleado(rs.getInt("id_empleado"))
 										 .build();
 				
@@ -78,7 +77,6 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> {
 						 		 .nombre(rs.getString("nombre"))
 						 		 .calle(rs.getString("calle"))
 						 		 .ciudad(rs.getString("ciudad"))
-						 		 .prestamo(rs.getBoolean("prestamo"))
 						 		 .idEmpleado(rs.getInt("id_empleado"))
 						 		 .build();
 			}
@@ -121,8 +119,8 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> {
 	@Override
 	public boolean insertar(Cliente cliente) throws DAOExcepcion{
 		
-		String query = "INSERT INTO CLIENTES(NOMBRE,CALLE,CIUDAD,PRESTAMO,ID_EMPLEADO) " +
-						"VALUES(?,?,?,?,?)";
+		String query = "INSERT INTO CLIENTES(NOMBRE,CALLE,CIUDAD,ID_EMPLEADO) " +
+						"VALUES(?,?,?,?)";
 		
 		try {
 			if(psInsertar == null)
@@ -131,8 +129,7 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> {
 			psInsertar.setString(1, cliente.getNombre());
 			psInsertar.setString(2, cliente.getCalle());
 			psInsertar.setString(3, cliente.getCiudad());
-			psInsertar.setBoolean(4, cliente.getPrestamo());
-			psInsertar.setInt(5, cliente.getIdEmpleado());
+			psInsertar.setInt(4, cliente.getIdEmpleado());
 			
 			return psInsertar.executeUpdate() == 1;
 			
@@ -149,7 +146,7 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> {
 	@Override
 	public boolean actualizar(Cliente cliente) throws DAOExcepcion{
 		
-		String query = "UPDATE CLIENTES SET NOMBRE=?, CALLE=?, CIUDAD=?, PRESTAMO=?, ID_EMPLEADO=? WHERE ID_CLIENTE=?";
+		String query = "UPDATE CLIENTES SET NOMBRE=?, CALLE=?, CIUDAD=?, ID_EMPLEADO=? WHERE ID_CLIENTE=?";
 
 		try {
 			if(psActualizar == null)
@@ -158,9 +155,8 @@ public class ClienteDAOImpl extends GenericDAOImpl<Cliente, Integer> {
 			psActualizar.setString(1, cliente.getNombre());
 			psActualizar.setString(2, cliente.getCalle());
 			psActualizar.setString(3, cliente.getCiudad());
-			psActualizar.setBoolean(4, cliente.getPrestamo());
-			psActualizar.setInt(5, cliente.getIdEmpleado());
-			psActualizar.setInt(6, cliente.getId());
+			psActualizar.setInt(4, cliente.getIdEmpleado());
+			psActualizar.setInt(5, cliente.getId());
 			
 			return psActualizar.executeUpdate() == 1;
 			

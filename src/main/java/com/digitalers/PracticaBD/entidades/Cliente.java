@@ -14,7 +14,6 @@ public class Cliente {
 	private String nombre;
 	private String calle;
 	private String ciudad;
-	private Boolean prestamo;
 	private Integer idEmpleado;
 	
 
@@ -24,23 +23,21 @@ public class Cliente {
 	}
 	
 	//Constructor sin id
-	public Cliente(String nombre, String calle, String ciudad, Boolean prestamo, Integer idEmpleado) {
+	public Cliente(String nombre, String calle, String ciudad, Integer idEmpleado) {
 		super();
 		this.nombre = nombre;
 		this.calle = calle;
 		this.ciudad = ciudad;
-		this.prestamo = prestamo;
 		this.idEmpleado = idEmpleado;
 	}
 
 	//Constructor con todos los parametros
-	public Cliente(Integer id, String nombre, String calle, String ciudad, Boolean prestamo, Integer idEmpleado) {
+	public Cliente(Integer id, String nombre, String calle, String ciudad, Integer idEmpleado) {
 		super();
 		this.id = id;
 		this.nombre = nombre;
 		this.calle = calle;
 		this.ciudad = ciudad;
-		this.prestamo = prestamo;
 		this.idEmpleado = idEmpleado;
 	}	
 	

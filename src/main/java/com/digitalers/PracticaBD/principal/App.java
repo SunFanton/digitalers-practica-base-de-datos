@@ -14,7 +14,6 @@ public class App {
 			do {
 				System.out.println("\n*****OPCIONES PARA GESTIONAR LA BBDD*****");
 				System.out.println("1 ---> Gestion Clientes");
-				System.out.println("2 ---> Gestion Sucursales");
 				System.out.println("0 ---> Salir");
 				eleccion = in.nextInt();
 				in.nextLine();
@@ -24,10 +23,8 @@ public class App {
 				case 1:
 					GestionClientes.gestionaClientes();
 					break;
-				case 2:
-					GestionSucursales.gestionaSucursales();
-					break;
 				default:
+					System.out.println("Adios!");
 					break;
 			}
 			
