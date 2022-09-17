@@ -4,10 +4,8 @@
 <Configuration status="INFO" monitorInterval="300">
 
 	<Properties>
-		<Property name="log-path">logs/
-		</Property>
-		<Property name="log-name">digitalers
-		</Property>
+		<Property name="log-path">logs/</Property>
+		<Property name="log-name">digitalers</Property>
 	</Properties>
 
 	<Appenders>

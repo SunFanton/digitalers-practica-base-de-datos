@@ -1,4 +1,4 @@
-package com.digitalers.PracticaBD.principal;
+package com.digitalers.PracticaBD.pruebas;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,8 +30,7 @@ public class GestionCuentas {
 				cuentaDAOImpl = new CuentaDAOImpl(MariaDB.getMariaDB().getConexion());
 			
 		} catch (JDBCExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error de conexion");
+			miLogger.error("Error de conexion",e);
 		}
 		
 		//-------------------------------------------------------------------
@@ -47,8 +46,7 @@ public class GestionCuentas {
 			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar datos");
+			miLogger.error("Error al recuperar datos",e);
 		}
 		
 		System.out.println();
@@ -61,11 +59,15 @@ public class GestionCuentas {
 		int nroCuenta = in.nextInt();
 		try {
 			cuenta = cuentaDAOImpl.obtenerPorClave(nroCuenta);
-			System.out.println(cuenta);
-			miLogger.info("Cuenta con nro " + nroCuenta + " recuperada");
+			if(cuenta != null) {
+				System.out.println(cuenta);
+				miLogger.info("Cuenta con nro " + nroCuenta + " recuperada");
+			}
+			else {
+				System.out.println("No existe");
+			}
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar cuenta");
+			miLogger.error("Error al recuperar cuenta",e);
 		}
 		
 		System.out.println();
@@ -83,10 +85,12 @@ public class GestionCuentas {
 				System.out.println("Eliminada");
 				miLogger.info("Cuenta nro " + nroCuenta + " eliminada");
 			}
+			else {
+				System.out.println("No eliminada");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al eliminar cuenta");
+			miLogger.error("Error al eliminar cuenta",e);
 		}
 		
 		System.out.println();
@@ -116,10 +120,12 @@ public class GestionCuentas {
 				System.out.println("Insertada");
 				miLogger.info("Cuenta nueva insertada");
 			}
+			else {
+				System.out.println("No insertada");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al insertar cuenta");
+			miLogger.error("Error al insertar cuenta",e);
 		}
 		
 		System.out.println();
@@ -148,10 +154,12 @@ public class GestionCuentas {
 				System.out.println("Actualizada");
 				miLogger.info("Cuenta nro " + nroCuentaAct + " actualizada");
 			}
+			else {
+				System.out.println("No actualizada");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al actualizar cuenta");
+			miLogger.error("Error al actualizar cuenta",e);
 		}
 		
 	

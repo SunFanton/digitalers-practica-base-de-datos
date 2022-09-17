@@ -1,4 +1,4 @@
-package com.digitalers.PracticaBD.principal;
+package com.digitalers.PracticaBD.pruebas;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,8 +30,7 @@ public class GestionEmpleados {
 				empleadoDAOImpl = new EmpleadoDAOImpl(MariaDB.getMariaDB().getConexion());
 			
 		} catch (JDBCExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error de conexion");
+			miLogger.error("Error de conexion",e);
 		}
 		
 		//-------------------------------------------------------------------
@@ -47,8 +46,7 @@ public class GestionEmpleados {
 			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar datos");
+			miLogger.error("Error al recuperar datos",e);
 		}
 		
 		System.out.println();
@@ -61,11 +59,15 @@ public class GestionEmpleados {
 		int id = in.nextInt();
 		try {
 			empleado = empleadoDAOImpl.obtenerPorClave(id);
-			System.out.println(empleado);
-			miLogger.info("Empleado con id " + id + " recuperado");
+			if(empleado != null) {
+				System.out.println(empleado);
+				miLogger.info("Empleado con id " + id + " recuperado");
+			}
+			else {
+				System.out.println("No existe");
+			}
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar empleado");
+			miLogger.error("Error al recuperar empleado",e);
 		}
 		
 		System.out.println();
@@ -83,10 +85,12 @@ public class GestionEmpleados {
 				System.out.println("Eliminado");
 				miLogger.info("Empleado con id " + id + " eliminado");
 			}
+			else {
+				System.out.println("No eliminado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al eliminar empleado");
+			miLogger.error("Error al eliminar empleado",e);
 		}
 		
 		System.out.println();
@@ -118,12 +122,14 @@ public class GestionEmpleados {
 			
 			if(resultado){
 				System.out.println("Insertado");
-				miLogger.info("Empelado nuevo insertado");
+				miLogger.info("Empleado nuevo insertado");
+			}
+			else {
+				System.out.println("No insertado");
 			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al insertar empleado");
+			miLogger.error("Error al insertar empleado",e);
 		}
 		
 		System.out.println();
@@ -158,10 +164,12 @@ public class GestionEmpleados {
 				System.out.println("Actualizado");
 				miLogger.info("Empleado con id " + idAct + " actualizado");
 			}
+			else {
+				System.out.println("No actualizado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al actualizar empleado");
+			miLogger.error("Error al actualizar empleado",e);
 		}
 		
 	

@@ -1,10 +1,10 @@
-package com.digitalers.PracticaBD.principal;
+package com.digitalers.PracticaBD.pruebas;
 
 import java.util.Scanner;
 
 public class App {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 	
 		Scanner in = new Scanner(System.in);
 		int eleccion = 1;
@@ -12,7 +12,7 @@ public class App {
 		while(eleccion != 0) {
 			
 			do {
-				System.out.println("\n*****OPCIONES PARA GESTIONAR LA BBDD*****");
+				System.out.println("\n*****OPCIONES PARA GESTIONAR LA BBDD*****\n");
 				System.out.println("1 ---> Gestion Clientes");
 				System.out.println("2 ---> Gestion Empleados");
 				System.out.println("3 ---> Gestion Cuentas");
@@ -40,7 +40,10 @@ public class App {
 					break;
 			}
 			
-			
+			System.out.println("\nGuardando cambios...\n");
+			Thread.sleep(3000);
+			System.out.println("Listo!!!\n");
+			Thread.sleep(1000);
 		}
 		
 		

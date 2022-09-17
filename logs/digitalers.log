@@ -14,3 +14,40 @@
 2022-09-17 17:26:38.511 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:84) - Prestamo nro 1029 eliminado
 2022-09-17 17:26:58.615 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:120) - Prestamo nuevo insertado
 2022-09-17 17:27:38.318 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:156) - Prestamo nro 1030 actualizado
+2022-09-17 20:02:42.612 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:41) - Recuperando datos
+2022-09-17 20:02:59.675 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:63) - Cliente con id 25 recuperado
+2022-09-17 20:03:06.950 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:82) - Cliente con id 26 eliminado
+2022-09-17 20:03:42.148 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:117) - Cliente nuevo insertado
+2022-09-17 20:04:55.529 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:155) - Cliente con id 27 actualizado
+2022-09-17 20:07:21.939 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:07:35.451 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:65) - Empleado con id 23 recuperado
+2022-09-17 20:08:23.605 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:121) - Empelado nuevo insertado
+2022-09-17 20:09:21.771 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:159) - Empleado con id 26 actualizado
+2022-09-17 20:09:39.176 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:43) - Recuperando datos
+2022-09-17 20:09:59.369 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:65) - Cuenta con nro 1029 recuperada
+2022-09-17 20:10:04.705 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:84) - Cuenta nro 1027 eliminada
+2022-09-17 20:10:14.638 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:117) - Cuenta nueva insertada
+2022-09-17 20:10:33.825 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:149) - Cuenta nro 1030 actualizada
+2022-09-17 20:10:41.054 INFO   -com.digitalers.PracticaBD.pruebas.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:43) - Recuperando datos
+2022-09-17 20:10:56.386 INFO   -com.digitalers.PracticaBD.pruebas.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:65) - Prestamo con nro 1028 recuperado
+2022-09-17 20:11:00.402 INFO   -com.digitalers.PracticaBD.pruebas.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:84) - Prestamo nro 1029 eliminado
+2022-09-17 20:11:17.699 INFO   -com.digitalers.PracticaBD.pruebas.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:120) - Prestamo nuevo insertado
+2022-09-17 20:11:39.497 INFO   -com.digitalers.PracticaBD.pruebas.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:156) - Prestamo nro 1028 actualizado
+2022-09-17 20:15:58.072 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:16:07.475 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:65) - Empleado con id 27 recuperado
+2022-09-17 20:17:25.019 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:17:30.746 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:65) - Empleado con id 27 recuperado
+2022-09-17 20:18:14.971 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:18:16.962 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:64) - Empleado con id 30 recuperado
+2022-09-17 20:21:53.638 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:24:09.475 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:24:36.764 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:129) - Empleado nuevo insertado
+2022-09-17 20:32:55.833 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:41) - Recuperando datos
+2022-09-17 20:33:02.124 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:87) - Cliente con id 27 eliminado
+2022-09-17 20:33:27.807 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:125) - Cliente nuevo insertado
+2022-09-17 20:34:01.674 INFO   -com.digitalers.PracticaBD.pruebas.GestionClientes.gestionaClientes(GestionClientes.java:166) - Cliente con id 28 actualizado
+2022-09-17 20:34:16.577 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:43) - Recuperando datos
+2022-09-17 20:34:20.177 INFO   -com.digitalers.PracticaBD.pruebas.GestionEmpleados.gestionaEmpleados(GestionEmpleados.java:66) - Empleado con id 19 recuperado
+2022-09-17 20:46:17.568 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:42) - Recuperando datos
+2022-09-17 20:47:09.067 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:64) - Cuenta con nro 1030 recuperada
+2022-09-17 20:47:24.287 INFO   -com.digitalers.PracticaBD.pruebas.GestionCuentas.gestionaCuentas(GestionCuentas.java:121) - Cuenta nueva insertada

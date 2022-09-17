@@ -1,4 +1,4 @@
-package com.digitalers.PracticaBD.principal;
+package com.digitalers.PracticaBD.pruebas;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +28,7 @@ public class GestionClientes {
 				clienteDAOImpl = new ClienteDAOImpl(MariaDB.getMariaDB().getConexion());
 			
 		} catch (JDBCExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error de conexion");
+			miLogger.error("Error de conexion",e);
 		}
 		
 		//-------------------------------------------------------------------
@@ -45,8 +44,7 @@ public class GestionClientes {
 			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar datos");
+			miLogger.error("Error al recuperar datos",e);
 		}
 		
 		System.out.println();
@@ -59,10 +57,14 @@ public class GestionClientes {
 		int id = in.nextInt();
 		try {
 			cliente = clienteDAOImpl.obtenerPorClave(id);
-			System.out.println(cliente);
-			miLogger.info("Cliente con id " + id + " recuperado");
+			if(cliente != null) {
+				System.out.println(cliente);
+				miLogger.info("Cliente con id " + id + " recuperado");
+			}
+			else {
+				System.out.println("No existe");
+			}
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
 			miLogger.error("Error al recuperar cliente");
 		}
 		
@@ -81,10 +83,12 @@ public class GestionClientes {
 				System.out.println("Eliminado");
 				miLogger.info("Cliente con id " + id + " eliminado");
 			}
+			else {
+				System.out.println("No eliminado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al eliminar cliente");
+			miLogger.error("Error al eliminar cliente",e);
 		}
 		
 		System.out.println();
@@ -116,10 +120,12 @@ public class GestionClientes {
 				System.out.println("Insertado");
 				miLogger.info("Cliente nuevo insertado");
 			}
+			else {
+				System.out.println("No eliminado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al insertar cliente");
+			miLogger.error("Error al insertar cliente",e);
 		}
 		
 		System.out.println();
@@ -154,10 +160,11 @@ public class GestionClientes {
 				System.out.println("Actualizado");
 				miLogger.info("Cliente con id " + idAct + " actualizado");
 			}
-			
+			else {
+				System.out.println("No actualizado");
+			}
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al actualizar cliente");
+			miLogger.error("Error al actualizar cliente",e);
 		}
 		
 	

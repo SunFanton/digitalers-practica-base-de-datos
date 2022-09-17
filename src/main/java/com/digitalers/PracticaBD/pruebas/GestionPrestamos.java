@@ -1,4 +1,4 @@
-package com.digitalers.PracticaBD.principal;
+package com.digitalers.PracticaBD.pruebas;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,8 +30,7 @@ public class GestionPrestamos {
 				prestamoDAOImpl = new PrestamoDAOImpl(MariaDB.getMariaDB().getConexion());
 			
 		} catch (JDBCExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error de conexion");
+			miLogger.error("Error de conexion",e);
 		}
 		
 		//-------------------------------------------------------------------
@@ -47,8 +46,7 @@ public class GestionPrestamos {
 			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar datos");
+			miLogger.error("Error al recuperar datos",e);
 		}
 		
 		System.out.println();
@@ -61,11 +59,15 @@ public class GestionPrestamos {
 		int nroPrestamo = in.nextInt();
 		try {
 			prestamo = prestamoDAOImpl.obtenerPorClave(nroPrestamo);
-			System.out.println(prestamo);
-			miLogger.info("Prestamo con nro " + nroPrestamo + " recuperado");
+			if(prestamo != null) {
+				System.out.println(prestamo);
+				miLogger.info("Prestamo con nro " + nroPrestamo + " recuperado");
+			}
+			else {
+				System.out.println("No existe");
+			}
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al recuperar prestamo");
+			miLogger.error("Error al recuperar prestamo",e);
 		}
 		
 		System.out.println();
@@ -83,10 +85,12 @@ public class GestionPrestamos {
 				System.out.println("Eliminado");
 				miLogger.info("Prestamo nro " + nroPrestamo + " eliminado");
 			}
+			else {
+				System.out.println("No eliminado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al eliminar prestamo");
+			miLogger.error("Error al eliminar prestamo",e);
 		}
 		
 		System.out.println();
@@ -119,10 +123,12 @@ public class GestionPrestamos {
 				System.out.println("Insertado");
 				miLogger.info("Prestamo nuevo insertado");
 			}
+			else {
+				System.out.println("No insertado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al insertar prestamo");
+			miLogger.error("Error al insertar prestamo",e);
 		}
 		
 		System.out.println();
@@ -155,10 +161,12 @@ public class GestionPrestamos {
 				System.out.println("Actualizado");
 				miLogger.info("Prestamo nro " + nroPrestamoAct + " actualizado");
 			}
+			else {
+				System.out.println("No actualizado");
+			}
 			
 		} catch (DAOExcepcion e) {
-			e.printStackTrace();
-			miLogger.error("Error al actualizar prestamo");
+			miLogger.error("Error al actualizar prestamo",e);
 		}
 		
 	

@@ -191,42 +191,43 @@ create table if not exists cuentas(
 	nro_cuenta int(30) auto_increment,
 	tipo_cuenta varchar(100) not null,
 	fecha_creacion date not null default current_date(),
+	activa tinyint(1) not null default 1,
 	primary key(nro_cuenta),
 	constraint fk_tipo_cuenta foreign key(tipo_cuenta) references tipos_cuentas(descripcion) on delete no action on update no action
 )engine=InnoDB;
 
 alter table cuentas auto_increment=1000;
 
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1990-07-18");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1990-09-21");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1990-09-10");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1990-04-15");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1991-06-18");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","1993-11-12");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","1993-01-16");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1993-02-02");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","1995-06-18");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","1998-04-05");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2000-12-21");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2000-08-14");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2003-09-20");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2003-01-18");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2006-10-23");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2006-03-15");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2009-08-09");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2010-10-10");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2011-03-27");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2011-07-23");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2015-06-12");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2015-09-13");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2016-09-13");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2016-08-10");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2019-08-01");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2019-04-16");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2019-09-12");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2021-03-03");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Caja de Ahorro","2021-07-09");
-insert into cuentas(tipo_cuenta,fecha_creacion) values("Cuenta Corriente","2022-05-18");
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-07-18",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-09-21",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-09-10",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-04-15",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1991-06-18",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","1993-11-12",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","1993-01-16",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1993-02-02",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1995-06-18",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","1998-04-05",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2000-12-21",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2000-08-14",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2003-09-20",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2003-01-18",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2006-10-23",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2006-03-15",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2009-08-09",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2010-10-10",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2011-03-27",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2011-07-23",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2015-06-12",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2015-09-13",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2016-09-13",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2016-08-10",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2019-08-01",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2019-04-16",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2019-09-12",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2021-03-03",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2021-07-09",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2022-05-18",1);
 
 
 drop table if exists cuentas_clientes;
