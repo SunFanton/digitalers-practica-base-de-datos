@@ -10,7 +10,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.digitalers.PracticaBD.entidades.Cuenta;
-import com.digitalers.PracticaBD.entidades.Cuenta;
 import com.digitalers.PracticaBD.excepciones.DAOExcepcion;
 import com.digitalers.PracticaBD.excepciones.JDBCExcepcion;
 import com.digitalers.PracticaBD.jdbc.conexiones.MariaDB;
@@ -18,9 +17,10 @@ import com.digitalers.PracticaBD.jdbc.dao.impl.CuentaDAOImpl;
 
 public class GestionCuentas {
 
+	private static CuentaDAOImpl cuentaDAOImpl = null;
+	
 	public static void gestionaCuentas() {
 
-		CuentaDAOImpl cuentaDAOImpl = null;
 		Logger miLogger = LogManager.getLogger();
 		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);

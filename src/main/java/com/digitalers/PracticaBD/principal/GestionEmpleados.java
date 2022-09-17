@@ -17,9 +17,10 @@ import com.digitalers.PracticaBD.jdbc.dao.impl.EmpleadoDAOImpl;
 
 public class GestionEmpleados {
 
+	private static EmpleadoDAOImpl empleadoDAOImpl = null;
+	
 	public static void gestionaEmpleados() {
 
-		EmpleadoDAOImpl empleadoDAOImpl = null;
 		Logger miLogger = LogManager.getLogger();
 		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);

@@ -16,10 +16,11 @@ public class App {
 				System.out.println("1 ---> Gestion Clientes");
 				System.out.println("2 ---> Gestion Empleados");
 				System.out.println("3 ---> Gestion Cuentas");
+				System.out.println("4 ---> Gestion Prestamos");
 				System.out.println("0 ---> Salir");
 				eleccion = in.nextInt();
 				in.nextLine();
-			}while(eleccion<0 || eleccion>3);
+			}while(eleccion<0 || eleccion>4);
 			
 			switch(eleccion) {
 				case 1:
@@ -30,6 +31,9 @@ public class App {
 					break;
 				case 3:
 					GestionCuentas.gestionaCuentas();
+					break;
+				case 4:
+					GestionPrestamos.gestionaPrestamos();
 					break;
 				default:
 					System.out.println("Adios!");

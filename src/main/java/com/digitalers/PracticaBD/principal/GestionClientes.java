@@ -15,9 +15,10 @@ import com.digitalers.PracticaBD.jdbc.dao.impl.ClienteDAOImpl;
 
 public class GestionClientes {
 	
+	private static ClienteDAOImpl clienteDAOImpl = null;
+	
 	public static void gestionaClientes() {
 
-		ClienteDAOImpl clienteDAOImpl = null;
 		Logger miLogger = LogManager.getLogger();
 		@SuppressWarnings("resource")
 		Scanner in = new Scanner(System.in);

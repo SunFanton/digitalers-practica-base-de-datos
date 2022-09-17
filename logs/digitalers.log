@@ -9,3 +9,8 @@
 2022-09-17 16:36:40.658 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:117) - Cuenta nueva insertada
 2022-09-17 16:36:52.638 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:149) - Cuenta nro 1031 actualizada
 2022-09-17 16:36:58.069 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:40) - Recuperando datos
+2022-09-17 17:26:28.588 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:43) - Recuperando datos
+2022-09-17 17:26:35.241 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:65) - Prestamo con nro 1029 recuperado
+2022-09-17 17:26:38.511 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:84) - Prestamo nro 1029 eliminado
+2022-09-17 17:26:58.615 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:120) - Prestamo nuevo insertado
+2022-09-17 17:27:38.318 INFO   -com.digitalers.PracticaBD.principal.GestionPrestamos.gestionaPrestamos(GestionPrestamos.java:156) - Prestamo nro 1030 actualizado
