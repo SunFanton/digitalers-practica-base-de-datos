@@ -1,0 +1,11 @@
+2022-09-17 16:34:10.258 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:43) - Recuperando datos
+2022-09-17 16:34:23.937 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:65) - Cuenta con nro 1029 recuperada
+2022-09-17 16:34:28.696 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:84) - Cuenta nro 1029 eliminada
+2022-09-17 16:34:42.909 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:117) - Cuenta nueva insertada
+2022-09-17 16:35:16.894 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:149) - Cuenta nro 1030 actualizada
+2022-09-17 16:35:36.807 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:43) - Recuperando datos
+2022-09-17 16:35:41.896 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:65) - Cuenta con nro 1030 recuperada
+2022-09-17 16:36:03.712 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:84) - Cuenta nro 1001 eliminada
+2022-09-17 16:36:40.658 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:117) - Cuenta nueva insertada
+2022-09-17 16:36:52.638 INFO   -com.digitalers.PracticaBD.principal.GestionCuentas.gestionaCuentas(GestionCuentas.java:149) - Cuenta nro 1031 actualizada
+2022-09-17 16:36:58.069 INFO   -com.digitalers.PracticaBD.principal.GestionClientes.gestionaClientes(GestionClientes.java:40) - Recuperando datos
