@@ -309,6 +309,7 @@ create table if not exists prestamos(
 	nro_prestamo int(30) auto_increment,
 	tipo_prestamo varchar(100) not null,
 	fecha_expedicion date not null default current_date(),
+	cant_cuotas int(30) not null default 3,
 	cancelado tinyint(1),
 	primary key(nro_prestamo),
 	constraint fk_tipo_prestamo foreign key(tipo_prestamo) references tipos_prestamos(descripcion) on delete no action on update no action
@@ -316,36 +317,36 @@ create table if not exists prestamos(
 
 alter table prestamos auto_increment=1000;
 
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","1999-01-01",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2000-04-15",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2001-09-09",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2001-09-15",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2001-09-16",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2001-09-24",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2001-10-09",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2001-10-10",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2001-10-23",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2001-11-03",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2002-02-10",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2003-04-15",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2003-05-16",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2003-05-19",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2003-09-12",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2006-12-09",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2008-12-12",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2010-08-16",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2012-04-15",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2012-10-03",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2018-07-13",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2019-06-01",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2019-11-05",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2019-11-20",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2020-05-09",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2020-06-07",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2020-09-09",1);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2021-10-10",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2021-11-15",0);
-insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2022-05-15",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","1999-01-01",3,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2000-04-15",12,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo hipotecario","2001-09-09",24,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo para empresas","2001-09-15",12,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo para empresas","2001-09-16",24,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo para empresas","2001-09-24",36,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo educativo","2001-10-09",36,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo educativo","2001-10-10",48,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2001-10-23",24,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo educativo","2001-11-03",12,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo hipotecario","2002-02-10",96,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo hipotecario","2003-04-15",144,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo hipotecario","2003-05-16",144,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2003-05-19",24,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2003-09-12",6,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo al consumo","2006-12-09",18,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo al consumo","2008-12-12",36,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo al consumo","2010-08-16",96,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo educativo","2012-04-15",96,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo para empresas","2012-10-03",12,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2018-07-13",12,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo hipotecario","2019-06-01",156,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2019-11-05",12,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo para empresas","2019-11-20",48,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo al consumo","2020-05-09",6,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2020-06-07",18,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2020-09-09",12,1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo educativo","2021-10-10",24,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo educativo","2021-11-15",24,0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cant_cuotas,cancelado) values("Prestamo personal","2022-05-15",12,1);
 
 drop table if exists prestamos_clientes;
 
