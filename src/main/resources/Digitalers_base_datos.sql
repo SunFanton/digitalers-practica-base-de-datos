@@ -4,13 +4,16 @@ create database if not exists digitalers_practica_base_datos;
 
 use digitalers_practica_base_datos;
 
+-- TABLA CIUDADES
+
 drop table if exists ciudades;
 
 create table if not exists ciudades(
 	id_ciudad int(30) auto_increment,
 	ciudad varchar(100) not null,
 	provincia varchar(100),
-	primary key(id_ciudad)
+	primary key(id_ciudad),
+	key(ciudad)
 )engine=InnoDB;
 
 insert into ciudades(ciudad,provincia) values("Flores","CABA");
@@ -32,6 +35,8 @@ insert into ciudades(ciudad,provincia) values("Ciudad de Mendoza","Mendoza");
 insert into ciudades(ciudad,provincia) values("Posadas","Misiones");
 insert into ciudades(ciudad,provincia) values("La Quiaca","Jujuy");
 insert into ciudades(ciudad,provincia) values("Ushuaia","Tierra del Fuego");
+
+-- TABLA SUCURSALES
 
 drop table if exists sucursales;
 
@@ -61,6 +66,8 @@ insert into sucursales(nombre_sucursal,ciudad) values("SUC16-MENDOZA","Ciudad de
 insert into sucursales(nombre_sucursal,ciudad) values("SUC17-POSADAS","Posadas");
 insert into sucursales(nombre_sucursal,ciudad) values("SUC18-LA QUIACA","La Quiaca");
 insert into sucursales(nombre_sucursal,ciudad) values("SUC19-USHUAIA","Ushuaia");
+
+-- TABLA EMPLEADOS
 
 drop table if exists empleados;
 
@@ -121,6 +128,7 @@ update empleados set id_empleado_jefe = 24 where id_empleado = 20;
 update empleados set id_empleado_jefe = 24 where id_empleado = 22;
 update empleados set id_empleado_jefe = 24 where id_empleado = 13;
 
+-- TABLA CLIENTES
 
 drop table if exists clientes;
 
@@ -131,7 +139,7 @@ create table if not exists clientes(
 	ciudad varchar(100) not null,
 	id_empleado int(20) default null,
 	primary key (id_cliente),
-	constraint fk_ciudad foreign key(ciudad) references sucursales(ciudad) on delete no action on update no action,
+	constraint fk_ciudad_cliente foreign key(ciudad) references sucursales(ciudad) on delete no action on update no action,
 	constraint fk_empleado foreign key (id_empleado) references empleados(id_empleado) on delete no action on update no action
 )engine=InnoDB;
 
@@ -162,6 +170,8 @@ insert into clientes(nombre,calle,ciudad,id_empleado) values("Alma Isidor","Vien
 insert into clientes(nombre,calle,ciudad,id_empleado) values("Mariela Portre","Cañaveral 7658","Ciudad de Mendoza",5);
 insert into clientes(nombre,calle,ciudad,id_empleado) values("Elvira Rosa Padilla","Avenida Juarez 456","Ciudad de Mendoza",5);
 
+-- TABLAS DE CUENTAS
+
 drop table if exists tipos_cuentas;
 
 create table if not exists tipos_cuentas(
@@ -180,42 +190,44 @@ drop table if exists cuentas;
 create table if not exists cuentas(
 	nro_cuenta int(30) auto_increment,
 	tipo_cuenta varchar(100) not null,
+	fecha_creacion date not null default current_date(),
+	activa tinyint(1) not null default 1,
 	primary key(nro_cuenta),
 	constraint fk_tipo_cuenta foreign key(tipo_cuenta) references tipos_cuentas(descripcion) on delete no action on update no action
 )engine=InnoDB;
 
 alter table cuentas auto_increment=1000;
 
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
-insert into cuentas(tipo_cuenta) values("Caja de Ahorro");
-insert into cuentas(tipo_cuenta) values("Cuenta Corriente");
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-07-18",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-09-21",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-09-10",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1990-04-15",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1991-06-18",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","1993-11-12",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","1993-01-16",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1993-02-02",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","1995-06-18",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","1998-04-05",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2000-12-21",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2000-08-14",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2003-09-20",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2003-01-18",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2006-10-23",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2006-03-15",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2009-08-09",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2010-10-10",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2011-03-27",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2011-07-23",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2015-06-12",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2015-09-13",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2016-09-13",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2016-08-10",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2019-08-01",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2019-04-16",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2019-09-12",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2021-03-03",0);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Caja de Ahorro","2021-07-09",1);
+insert into cuentas(tipo_cuenta,fecha_creacion,activa) values("Cuenta Corriente","2022-05-18",1);
 
 
 drop table if exists cuentas_clientes;
@@ -225,7 +237,7 @@ create table if not exists cuentas_clientes(
 	id_cliente int(20),
 	key (nro_cuenta,id_cliente),
 	constraint fk_nro_cuenta foreign key(nro_cuenta) references cuentas(nro_cuenta) on delete cascade on update cascade,
-	constraint fk_id_cliente foreign key(id_cliente) references clientes(id_cliente) on delete cascade on update cascade
+	constraint fk_id_cliente_cuenta foreign key(id_cliente) references clientes(id_cliente) on delete cascade on update cascade
 )engine=InnoDB;
 
 insert into cuentas_clientes(nro_cuenta,id_cliente) values(1001,1);
@@ -274,9 +286,11 @@ insert into cuentas_clientes(nro_cuenta,id_cliente) values(1019,10);
 insert into cuentas_clientes(nro_cuenta,id_cliente) values(1021,11);
 insert into cuentas_clientes(nro_cuenta,id_cliente) values(1021,3);
 
+-- TABLAS DE PRESTAMOS
+
 drop table if exists tipos_prestamos;
 
-create table if exists tipos_prestamos(
+create table if not exists tipos_prestamos(
 	id int(11) auto_increment,
 	descripcion varchar(100) not null,
 	primary key(id),
@@ -289,45 +303,49 @@ insert into tipos_prestamos(descripcion) values("Prestamo educativo");
 insert into tipos_prestamos(descripcion) values("Prestamo hipotecario");
 insert into tipos_prestamos(descripcion) values("Prestamo para empresas");
 
+drop table if exists prestamos;
+
 create table if not exists prestamos(
 	nro_prestamo int(30) auto_increment,
 	tipo_prestamo varchar(100) not null,
+	fecha_expedicion date not null default current_date(),
+	cancelado tinyint(1),
 	primary key(nro_prestamo),
 	constraint fk_tipo_prestamo foreign key(tipo_prestamo) references tipos_prestamos(descripcion) on delete no action on update no action
 )engine=InnoDB;
 
 alter table prestamos auto_increment=1000;
 
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
-insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
-insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
-insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
-insert into prestamos(tipo_prestamo) values("Prestamo educativo");
-insert into prestamos(tipo_prestamo) values("Prestamo educativo");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo educativo");
-insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
-insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
-insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
-insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
-insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
-insert into prestamos(tipo_prestamo) values("Prestamo educativo");
-insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo hipotecario");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo para empresas");
-insert into prestamos(tipo_prestamo) values("Prestamo para consumo");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
-insert into prestamos(tipo_prestamo) values("Prestamo educativo");
-insert into prestamos(tipo_prestamo) values("Prestamo educativo");
-insert into prestamos(tipo_prestamo) values("Prestamo personal");
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","1999-01-01",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2000-04-15",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2001-09-09",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2001-09-15",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2001-09-16",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2001-09-24",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2001-10-09",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2001-10-10",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2001-10-23",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2001-11-03",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2002-02-10",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2003-04-15",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2003-05-16",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2003-05-19",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2003-09-12",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2006-12-09",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2008-12-12",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2010-08-16",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2012-04-15",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2012-10-03",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2018-07-13",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo hipotecario","2019-06-01",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2019-11-05",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo para empresas","2019-11-20",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo al consumo","2020-05-09",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2020-06-07",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2020-09-09",1);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2021-10-10",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo educativo","2021-11-15",0);
+insert into prestamos(tipo_prestamo,fecha_expedicion,cancelado) values("Prestamo personal","2022-05-15",1);
 
 drop table if exists prestamos_clientes;
 
@@ -336,7 +354,7 @@ create table if not exists prestamos_clientes(
 	id_cliente int(20),
 	key (nro_prestamo,id_cliente),
 	constraint fk_nro_prestamo foreign key(nro_prestamo) references prestamos(nro_prestamo) on delete cascade on update cascade,
-	constraint fk_id_cliente foreign key(id_cliente) references clientes(id_cliente) on delete cascade on update cascade
+	constraint fk_id_cliente_prestamo foreign key(id_cliente) references clientes(id_cliente) on delete cascade on update cascade
 )engine=InnoDB;
 
 insert into prestamos_clientes(nro_prestamo,id_cliente) values(1001,1);
